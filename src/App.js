@@ -1,18 +1,18 @@
-import Home from "./pages/Home";
+import HomePage from "./pages/HomePage";
 // import Blog from './pages/Blog';
-// import Basket from './pages/Basket';
+import BasketPage from "./pages/BasketPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      <Home />
-      {/* <Blog />
-        <Basket />  */}
+      {/* <HomePage /> */}
+      {/* <BlogPage /> */}
+      <BasketPage />
       <Footer />
-    </div>
+    </>
   );
 };
 
