@@ -1,9 +1,19 @@
-const App = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+import Home from "./pages/Home";
+// import Blog from './pages/Blog';
+// import Basket from './pages/Basket';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-export default App
+const App = () => {
+  return (
+    <div>
+      <Navbar />
+      <Home />
+      {/* <Blog />
+        <Basket />  */}
+      <Footer />
+    </div>
+  );
+};
+
+export default App;

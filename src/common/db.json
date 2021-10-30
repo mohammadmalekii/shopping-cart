@@ -1,0 +1,53 @@
+{
+    "data": [{
+            "id": 1,
+            "title": "queen panel bed",
+            "price": 10.99,
+            "imageUrl": "./images/product-1.jpeg",
+            "qty": 1
+        }, {
+            "id": 2,
+            "title": "good panel bed",
+            "price": 14.99,
+            "imageUrl": "./images/product-2.jpeg",
+            "qty": 1
+        }, {
+            "id": 3,
+            "title": "folan panel bed",
+            "price": 7.99,
+            "imageUrl": "./images/product-3.jpeg",
+            "qty": 1
+        }, {
+            "id": 4,
+            "title": "twin panel bed",
+            "price": 11.99,
+            "imageUrl": "./images/product-4.jpeg",
+            "qty": 1
+        }, {
+            "id": 5,
+            "title": "fridge",
+            "price": 4.99,
+            "imageUrl": "./images/product-5.jpeg",
+            "qty": 1
+        }, {
+            "id": 6,
+            "title": "fridge",
+            "price": 23.99,
+            "imageUrl": "./images/product-6.jpeg",
+            "qty": 1
+        }, {
+            "id": 7,
+            "title": "dresser",
+            "price": 42.99,
+            "imageUrl": "./images/product-7.jpeg",
+            "qty": 1
+        }, {
+            "id": 8,
+            "title": "couch",
+            "price": 24.99,
+            "imageUrl": "./images/product-8.jpeg",
+            "qty": 1
+        }
+
+    ]
+}
