@@ -1,5 +1,4 @@
 import "./ProductList.css";
-
 const ProductList = () => {
   return (
     <section className='products'>
