@@ -1,5 +1,5 @@
 import HomePage from "./pages/HomePage";
-// import Blog from './pages/Blog';
+import BlogPage from "./pages/BlogPage";
 import BasketPage from "./pages/BasketPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -9,8 +9,8 @@ const App = () => {
     <>
       <Navbar />
       {/* <HomePage /> */}
-      {/* <BlogPage /> */}
-      <BasketPage />
+      <BlogPage />
+      {/* <BasketPage /> */}
       <Footer />
     </>
   );

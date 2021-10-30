@@ -1,0 +1,64 @@
+#Blog {
+    font-family: "iransans";
+    margin: 50px auto;
+    width: 1000px;
+    line-height: 30px;
+    width: 100%;
+}
+
+.blog-container {
+    background-color: white;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.image-blog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-blog img {
+    width: 100%;
+}
+
+.blog-title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.blog-title h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 31px;
+    line-height: 48px;
+}
+
+.blog-caption {
+    text-align: right;
+}
+
+.blog-body {
+    padding: 30px;
+}
+
+.blog-body button {
+    background-color: #0a9878;
+    border: none;
+    padding: 2px 17px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    border-radius: 4px;
+    transition: all .3s;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    .blog-container {
+        background-color: white;
+        width: 85%;
+        margin: 0 auto;
+    }
+}
