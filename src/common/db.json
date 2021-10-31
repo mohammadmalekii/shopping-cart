@@ -86,9 +86,9 @@
 
         }, {
             "id": "15",
-            "title": "صندلی اداری",
+            "title": "چراغ مطالعه",
             "price": 320000,
-            "imageUrl": "./images/chair1.png",
+            "imageUrl": "./images/light.png",
             "qty": 1
         }
 

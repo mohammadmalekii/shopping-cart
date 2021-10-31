@@ -1,162 +1,47 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchProduct } from "../../Redux/productSlice";
+import Product from "../Product";
+import Error from "../Error";
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "./ProductList.css";
 const ProductList = () => {
+  const data = useSelector((state) => state.product.productList);
+  const status = useSelector((state) => state.product.status);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchProduct());
+    }
+  }, [status, dispatch]);
+
+  let content;
+  if (status === "success") {
+    content = data.map((productItem) => (
+      <Product product={productItem} key={productItem.id} />
+    ));
+  } else if (status === "loading") {
+    content = (
+      <Loader
+        style={{ margin: "0 auto" }}
+        type='Oval'
+        color='#0a9878'
+        height={150}
+        width={150}
+      />
+    );
+  } else if (status === "error") {
+    content = <Error />;
+  }
+  // استاد این کتابه اسمش english sentence structure هستش  ؟
   return (
     <section className='products'>
       <div className='section-title'>
         <h2>محصولات</h2>
       </div>
-
-      <div className='product-list'>
-        <div className='product'>
-          <div className='img-container'>
-            <img
-              src='../../../public/images/armchair1.jpeg'
-              className='product-img'
-              alt='img'
-            />
-          </div>
-          <div className='product-body'>
-            <p className='product-title'>صندلی آرمیچر</p>
-            <p className='product-price'>250,000 تومان</p>
-          </div>
-          <button className='add-to-cart'>خـریـد</button>
-        </div>
-
-        <div className='product'>
-          <div className='img-container'>
-            <img
-              src='../../../public/images/desk1.jpeg'
-              className='product-img'
-              alt='img'
-            />
-          </div>
-          <div className='product-body'>
-            <p className='product-title'>صندلی آرمیچر</p>
-            <p className='product-price'>250,000</p>
-          </div>
-          <button className='add-to-cart'>خـریـد</button>
-        </div>
-
-        <div className='product'>
-          <div className='img-container'>
-            <img
-              src='../../../public/images/rock-chair1.jpeg'
-              className='product-img'
-              alt='img'
-            />
-          </div>
-          <div className='product-body'>
-            <p className='product-title'>صندلی آرمیچر</p>
-            <p className='product-price'>250,000</p>
-          </div>
-          <button className='add-to-cart'>خـریـد</button>
-        </div>
-
-        <div className='product'>
-          <div className='img-container'>
-            <img
-              src='../../../public/images/brown-sofa-2.jpeg'
-              className='product-img'
-              alt='img'
-            />
-          </div>
-          <div className='product-body'>
-            <p className='product-title'>صندلی آرمیچر</p>
-            <p className='product-price'>250,000</p>
-          </div>
-          <button className='add-to-cart'>خـریـد</button>
-        </div>
-
-        <div className='product'>
-          <div className='img-container'>
-            <img
-              src='../../../public/images/era-chair1.jpeg'
-              className='product-img'
-              alt='img'
-            />
-          </div>
-          <div className='product-body'>
-            <p className='product-title'>صندلی آرمیچر</p>
-            <p className='product-price'>250,000</p>
-          </div>
-          <button className='add-to-cart'>خـریـد</button>
-        </div>
-
-        <div className='product'>
-          <div className='img-container'>
-            <img
-              src='../../../public/images/gray-sofa-1.jpeg'
-              className='product-img'
-              alt='img'
-            />
-          </div>
-          <div className='product-body'>
-            <p className='product-title'>صندلی آرمیچر</p>
-            <p className='product-price'>250,000</p>
-          </div>
-          <button className='add-to-cart'>خـریـد</button>
-        </div>
-
-        <div className='product'>
-          <div className='img-container'>
-            <img
-              src='../../../public/images/lamp1.jpeg'
-              className='product-img'
-              alt='img'
-            />
-          </div>
-          <div className='product-body'>
-            <p className='product-title'>صندلی آرمیچر</p>
-            <p className='product-price'>250,000</p>
-          </div>
-          <button className='add-to-cart'>خـریـد</button>
-        </div>
-
-        <div className='product'>
-          <div className='img-container'>
-            <img
-              src='../../../public/images/lamp5.jpeg'
-              className='product-img'
-              alt='img'
-            />
-          </div>
-          <div className='product-body'>
-            <p className='product-title'>صندلی آرمیچر</p>
-            <p className='product-price'>250,000</p>
-          </div>
-          <button className='add-to-cart'>خـریـد</button>
-        </div>
-
-        <div className='product'>
-          <div className='img-container'>
-            <img
-              src='../../../public/images/onkel-sofa1.jpeg'
-              className='product-img'
-              alt='img'
-            />
-          </div>
-          <div className='product-body'>
-            <p className='product-title'>صندلی آرمیچر</p>
-            <p className='product-price'>250,000</p>
-          </div>
-          <button className='add-to-cart'>خـریـد</button>
-        </div>
-
-        <div className='product'>
-          <div className='img-container'>
-            <img
-              src='../../../public/images/image/white-desk1.jpeg'
-              className='product-img'
-              alt='img'
-            />
-          </div>
-          <div className='product-body'>
-            <p className='product-title'>صندلی آرمیچر</p>
-            <p className='product-price'>250,000</p>
-          </div>
-          <button className='add-to-cart'>خـریـد</button>
-        </div>
-      </div>
+      <div className='product-list'>{content}</div>
     </section>
   );
 };
