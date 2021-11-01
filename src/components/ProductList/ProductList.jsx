@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProduct } from "../../Redux/productSlice";
 import Product from "../Product";
@@ -42,6 +43,17 @@ const ProductList = () => {
         <h2>محصولات</h2>
       </div>
       <div className='product-list'>{content}</div>
+      <ToastContainer
+        position='top-right'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </section>
   );
 };

@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const numberOfProduct = useSelector((state) => state.cart.list.length);
   return (
     <nav>
       <div className='nav-container'>
@@ -29,7 +31,7 @@ const Navbar = () => {
         <div className='cart-wrapper'>
           <button type='button' className='basket'>
             <i className='fas fa-shopping-cart'></i>
-            <span className=''>5</span>
+            <span className=''>{numberOfProduct}</span>
           </button>
         </div>
       </div>
