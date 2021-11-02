@@ -1,19 +1,27 @@
-import HomePage from "./pages/HomePage";
+import ShopPage from "./pages/ShopPage";
 import BlogPage from "./pages/BlogPage";
-import BasketPage from "./pages/BasketPage";
+import CartPage from "./pages/CartPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
   return (
-    <>
+    <Router>
       <Navbar />
-      <HomePage />
-      {/* <BlogPage /> */}
-
-      {/* <BasketPage /> */}
+      <Switch>
+        <Route path='/blog' exact>
+          <BlogPage />
+        </Route>
+        <Route path='/cart' exact>
+          <CartPage />
+        </Route>
+        <Route path='/' exact>
+          <ShopPage />
+        </Route>
+      </Switch>
       <Footer />
-    </>
+    </Router>
   );
 };
 

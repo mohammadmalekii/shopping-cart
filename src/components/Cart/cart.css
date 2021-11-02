@@ -128,6 +128,11 @@ th {
     color: white;
 }
 
+.empty-cart {
+    text-align: center;
+    font-size: 25px;
+}
+
 .price-container {
     display: flex;
     justify-content: space-around;
@@ -223,5 +228,8 @@ th {
         height: 20px;
         text-align: center;
         line-height: normal;
+    }
+    .empty-cart {
+        font-size: 10px;
     }
 }

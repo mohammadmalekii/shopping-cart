@@ -1,6 +1,6 @@
 import Filter from "../components/Filter";
 import ProductList from "../components/ProductList";
-const HomePage = () => {
+const ShopPage = () => {
   return (
     <div>
       <Filter />
@@ -9,4 +9,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default ShopPage;

@@ -6,7 +6,7 @@ import Product from "../Product";
 import Error from "../Error";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import "./ProductList.css";
+import "./productList.css";
 const ProductList = () => {
   const data = useSelector((state) => state.product.productList);
   const status = useSelector((state) => state.product.status);
@@ -36,7 +36,6 @@ const ProductList = () => {
   } else if (status === "error") {
     content = <Error />;
   }
-  // استاد این کتابه اسمش english sentence structure هستش  ؟
   return (
     <section className='products'>
       <div className='section-title'>

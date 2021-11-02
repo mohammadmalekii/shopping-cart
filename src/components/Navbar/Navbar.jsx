@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
-import "./Navbar.css";
+import { Link, NavLink } from "react-router-dom";
+import "./navbar.css";
 
 const Navbar = () => {
   const numberOfProduct = useSelector((state) => state.cart.list.length);
@@ -13,26 +14,51 @@ const Navbar = () => {
         <div className='nav-list'>
           <ul className='nav-menu'>
             <li className='nav-item'>
-              <a className='nav-link'>فروشگاه</a>
+              <NavLink
+                exact
+                to='/'
+                activeClassName='active-link'
+                className='nav-link'
+              >
+                فروشگاه
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <a className='nav-link'>مقالات</a>
+              <NavLink
+                exact
+                to='/blog'
+                activeClassName='active-link'
+                className='nav-link'
+              >
+                مقالات
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <a className='nav-link'>درباره ما</a>
+              <NavLink
+                exact
+                to='/about_us'
+                activeClassName='active-link'
+                className='nav-link'
+              >
+                درباره ما
+              </NavLink>
             </li>
           </ul>
         </div>
 
         <div className='nav-title'>
-          <a className='navbar-title'>فروشگاه دکوپاژ</a>
+          <NavLink to='/' className='navbar-title'>
+            فروشگاه دکوپاژ
+          </NavLink>
         </div>
 
         <div className='cart-wrapper'>
-          <button type='button' className='basket'>
-            <i className='fas fa-shopping-cart'></i>
-            <span className=''>{numberOfProduct}</span>
-          </button>
+          <Link to='/cart'>
+            <button type='button' className='basket'>
+              <i className='fas fa-shopping-cart'></i>
+              <span className=''>{numberOfProduct}</span>
+            </button>
+          </Link>
         </div>
       </div>
     </nav>
