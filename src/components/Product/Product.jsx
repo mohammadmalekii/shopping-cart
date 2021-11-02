@@ -1,15 +1,21 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../Redux/cartSlice";
+import { addToCart, calcTotalPrice } from "../../Redux/cartSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
+import { formatCurrency } from "../formatCurrency";
 
 const Product = ({ product }) => {
+  console.log(formatCurrency(product.price));
+  console.log(product.price);
+
   const dispatch = useDispatch();
   const cartList = useSelector((state) => state.cart.list);
 
   const addToBasket = () => {
     dispatch(addToCart(product));
+    dispatch(calcTotalPrice());
+
     toast.success(`${product.title} به سبد خرید اضافه شد`, {
       position: "top-right",
       autoClose: 3000,
@@ -39,7 +45,7 @@ const Product = ({ product }) => {
       </div>
       <div className='product-body'>
         <p className='product-title'>{product.title}</p>
-        <p className='product-price'>{product.price} تومان</p>
+        <p className='product-price'>{formatCurrency(product.price)}</p>
       </div>
       <button className='add-to-cart' onClick={addToBasket} disabled={isInCard}>
         {isInCard ? "در سبد خرید موجود است" : "خـریـد"}

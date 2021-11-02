@@ -7,7 +7,9 @@ import {
   removeFromCart,
   incremenetQty,
   decremenetQty,
+  calcTotalPrice,
 } from "../../Redux/cartSlice";
+import { formatCurrency } from "../formatCurrency";
 
 const CartItem = ({ cart }) => {
   const [qty, setQty] = useState(1);
@@ -16,15 +18,18 @@ const CartItem = ({ cart }) => {
   const setIncrease = () => {
     setQty((qty) => qty + 1);
     dispatch(incremenetQty(cart.id));
+    dispatch(calcTotalPrice());
   };
 
   const setDecrease = () => {
     setQty((qty) => qty - 1);
     dispatch(decremenetQty(cart.id));
+    dispatch(calcTotalPrice());
   };
 
   const handleRemove = () => {
     dispatch(removeFromCart(cart.id));
+    dispatch(calcTotalPrice());
     toast.error(`${cart.title} از سبد خرید حذف شد !`, {
       position: "top-right",
       autoClose: 3000,
@@ -44,7 +49,7 @@ const CartItem = ({ cart }) => {
       <td className='product-name'>
         <h2>{cart.title}</h2>
       </td>
-      <td>{cart.price}</td>
+      <td>{formatCurrency(cart.price)}</td>
       <td>
         <div className='quantity'>
           <button
@@ -60,7 +65,7 @@ const CartItem = ({ cart }) => {
           </button>
         </div>
       </td>
-      <td className='total-price'>159,000</td>
+      <td className='total-price'>{formatCurrency(cart.price * qty)}</td>
       <td>
         <button className='trash' onClick={handleRemove}>
           <i className='fas fa-trash-alt'></i>
