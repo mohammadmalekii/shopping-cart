@@ -1,4 +1,13 @@
+import { useDispatch } from "react-redux";
+import { removeFromCart } from "../../Redux/cartSlice";
+
 const CartItem = ({ cart }) => {
+  const dispatch = useDispatch();
+
+  const handleRemove = () => {
+    dispatch(removeFromCart(cart.id));
+  };
+
   return (
     <tr>
       <td className='product-thumbnail'>
@@ -17,7 +26,7 @@ const CartItem = ({ cart }) => {
       </td>
       <td className='total-price'>159,000</td>
       <td>
-        <button className='trash'>
+        <button className='trash' onClick={handleRemove}>
           <i className='fas fa-trash-alt'></i>
         </button>
       </td>

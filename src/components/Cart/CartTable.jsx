@@ -1,9 +1,14 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart } from "../../Redux/cartSlice";
 import CartItem from "./CartItem";
 import emptyCartSvg from "./empty-cart.svg";
 
 const BasketTable = () => {
   const cart = useSelector((state) => state.cart.list);
+  const dispatch = useDispatch();
+  const removeAllProduct = () => {
+    dispatch(clearCart());
+  };
 
   return (
     <div className='basket-section'>
@@ -33,6 +38,9 @@ const BasketTable = () => {
             </tbody>
           </table>
         )}
+        <div className='clear-cart'>
+          <button onClick={removeAllProduct}>خالی کردن سبد خرید</button>
+        </div>
       </div>
     </div>
   );
