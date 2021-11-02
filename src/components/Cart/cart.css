@@ -41,6 +41,10 @@
     margin: 25px 0;
 }
 
+.product-name {
+    font-weight: 500;
+}
+
 .product-thumbnail {
     /* display: flex;
     justify-content: center;
@@ -55,7 +59,7 @@
 }
 
 .input-number {
-    width: 40px;
+    width: 20px;
     padding: 0 12px;
     vertical-align: top;
     text-align: center;
@@ -74,6 +78,7 @@
 .input-number-increment {
     display: inline-block;
     width: 30px;
+    height: 100%;
     line-height: 38px;
     background: #f1f1f1;
     color: #444;
@@ -112,7 +117,8 @@ table {
     width: 100%;
 }
 
-.title-img {
+.th-img,
+.th-qty {
     width: 15%;
 }
 
@@ -131,6 +137,12 @@ th {
 .empty-cart {
     text-align: center;
     font-size: 25px;
+}
+
+.empty-cart h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 35px;
 }
 
 .clear-cart {
@@ -218,27 +230,47 @@ th {
     /* .basket-section {
         width: 100%;
     } */
+    .quantity {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
     .price-footer img {
         display: none;
+    }
+    .input-number {
+        width: 10px;
     }
 }
 
 @media screen and (max-width:750px) {
-    .quantity {
+    /* .quantity {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
+    } */
     .input-number-decrement,
     .input-number-increment {
         border: 1px solid #ccc;
-        border-radius: 0;
-        width: 40px;
+        /* border-radius: 0; */
+        width: 32px;
     }
     .input-number {
+        width: 30px;
         padding: 0;
-        height: 27px
+        height: 40px;
+    }
+    .empty-cart h1 {
+        text-align: center;
+        font-size: initial;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .basket-list {
+        overflow: auto;
     }
 }
 
@@ -249,10 +281,13 @@ th {
     .input-number,
     .input-number-decrement,
     .input-number-increment {
-        /* width: -webkit-fill-available; */
-        height: 20px;
+        height: 25px;
         text-align: center;
         line-height: normal;
+        border-radius: initial;
+    }
+    .quantity {
+        flex-direction: column-reverse;
     }
     .empty-cart {
         font-size: 12px;

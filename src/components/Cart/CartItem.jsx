@@ -1,11 +1,39 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { removeFromCart } from "../../Redux/cartSlice";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+
+import {
+  removeFromCart,
+  incremenetQty,
+  decremenetQty,
+} from "../../Redux/cartSlice";
 
 const CartItem = ({ cart }) => {
+  const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
+
+  const setIncrease = () => {
+    setQty((qty) => qty + 1);
+    dispatch(incremenetQty(cart.id));
+  };
+
+  const setDecrease = () => {
+    setQty((qty) => qty - 1);
+    dispatch(decremenetQty(cart.id));
+  };
 
   const handleRemove = () => {
     dispatch(removeFromCart(cart.id));
+    toast.error(`${cart.title} از سبد خرید حذف شد !`, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (
@@ -19,9 +47,17 @@ const CartItem = ({ cart }) => {
       <td>{cart.price}</td>
       <td>
         <div className='quantity'>
-          <span className='input-number-decrement'>–</span>
-          <input className='input-number' type='text' value='1' min='1' />
-          <span className='input-number-increment'>+</span>
+          <button
+            className='input-number-decrement'
+            onClick={setDecrease}
+            disabled={qty <= 1}
+          >
+            –
+          </button>
+          <input className='input-number' type='text' value={qty} readOnly />
+          <button className='input-number-increment' onClick={setIncrease}>
+            +
+          </button>
         </div>
       </td>
       <td className='total-price'>159,000</td>
