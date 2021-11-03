@@ -7,27 +7,13 @@ const Filter = () => {
 
   const dispatch = useDispatch();
 
-  const [filterBtn, setFilterBtn] = useState([
-    { name: "همه", category: "all", active: true },
-    { name: "مبل", category: "sofa", active: false },
-    { name: "صندلی", category: "chair", active: false },
-    { name: "چراغ", category: "light", active: false },
-    { name: "میز", category: "desk", active: false },
+  const [filterBtn] = useState([
+    { name: "همه", category: "all" },
+    { name: "مبل", category: "sofa" },
+    { name: "صندلی", category: "chair" },
+    { name: "چراغ", category: "light" },
+    { name: "میز", category: "desk" },
   ]);
-
-  const handleFilter = (filter) => {
-    dispatch(changeFilter(filter));
-    const array = [...filterBtn];
-    array.map((item) => {
-      if (filterStatus !== item.category) {
-        item.active = false;
-      }
-      return item;
-    });
-    const item = array.find((item) => item.category === filter);
-    item.active = true;
-    setFilterBtn(array);
-  };
 
   return (
     <section className='filter-section'>
@@ -36,7 +22,7 @@ const Filter = () => {
           {filterBtn.map((filter) => (
             <li className='filter-btn' key={filter.category}>
               <button
-                onClick={() => handleFilter(filter.category)}
+                onClick={() => dispatch(changeFilter(filter.category))}
                 className={
                   filter.category === filterStatus
                     ? "active-filter"
