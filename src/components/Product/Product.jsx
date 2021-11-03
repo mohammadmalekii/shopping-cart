@@ -4,11 +4,9 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
 import { formatCurrency } from "../formatCurrency";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
-  console.log(formatCurrency(product.price));
-  console.log(product.price);
-
   const dispatch = useDispatch();
   const cartList = useSelector((state) => state.cart.list);
 
@@ -41,7 +39,14 @@ const Product = ({ product }) => {
   return (
     <div className='product'>
       <div className='img-container'>
-        <img src={product.imageUrl} className='product-img' alt='img' />
+        <Link to={`/product/${product.id}`}>
+          <img
+            loading='lazy'
+            src={product.imageList[0]}
+            className='product-img'
+            alt={product.title}
+          />
+        </Link>
       </div>
       <div className='product-body'>
         <p className='product-title'>{product.title}</p>

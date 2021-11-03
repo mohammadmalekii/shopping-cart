@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart } from "../../Redux/cartSlice";
+import { clearCart } from "../../../Redux/cartSlice";
 import { ToastContainer } from "react-toastify";
-import CartItem from "./CartItem";
+import CartItem from "../CartItem/CartItem";
 import emptyCartSvg from "./empty-cart.svg";
 
 const BasketTable = () => {

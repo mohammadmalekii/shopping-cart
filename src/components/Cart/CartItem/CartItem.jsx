@@ -8,8 +8,8 @@ import {
   incremenetQty,
   decremenetQty,
   calcTotalPrice,
-} from "../../Redux/cartSlice";
-import { formatCurrency } from "../formatCurrency";
+} from "../../../Redux/cartSlice";
+import { formatCurrency } from "../../formatCurrency";
 
 const CartItem = ({ cart }) => {
   const [qty, setQty] = useState(1);
@@ -30,7 +30,7 @@ const CartItem = ({ cart }) => {
   const handleRemove = () => {
     dispatch(removeFromCart(cart.id));
     dispatch(calcTotalPrice());
-    toast.error(`${cart.title} از سبد خرید حذف شد !`, {
+    toast.error(`${cart.title} از سبد خرید حذف شد`, {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -44,7 +44,7 @@ const CartItem = ({ cart }) => {
   return (
     <tr>
       <td className='product-thumbnail'>
-        <img src={cart.imageUrl} alt='product-img' />
+        <img src={cart.imageList[0]} alt='product-img' />
       </td>
       <td className='product-name'>
         <h2>{cart.title}</h2>

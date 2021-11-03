@@ -1,5 +1,5 @@
-import BasketTable from "../components/Cart/CartTable";
-import BasketCalc from "../components/Cart/CartCalcPrice";
+import BasketTable from "../components/Cart/CartTable/CartTable";
+import BasketCalc from "../components/Cart/CartCalcPrice/CartCalcPrice";
 import "../components/Cart/cart.css";
 const CartPage = () => {
   return (

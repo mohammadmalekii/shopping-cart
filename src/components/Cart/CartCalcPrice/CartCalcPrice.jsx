@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { formatCurrency } from "../formatCurrency";
+import { formatCurrency } from "../../formatCurrency";
 import basket from "./basket.png";
 const BasketCalc = () => {
   const totalPrice = useSelector((state) => state.cart.totalPrice);

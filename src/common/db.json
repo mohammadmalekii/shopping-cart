@@ -3,92 +3,107 @@
             "id": "1",
             "title": "صندلی آیراک",
             "price": 780000,
-            "imageUrl": "./images/era-chair1.jpeg",
+            "imageList": ["../images/era-chair1.jpeg", "../images/era-chair2.jpeg", "../images/era-chair3.jpeg"],
+            "category": "chair",
             "qty": 1
         }, {
             "id": "2",
             "title": "مبل سوفیا",
             "price": 1200000,
-            "imageUrl": "./images/brown-sofa-1.jpeg",
+            "imageList": ["../images/brown-sofa-1.jpeg", "../images/brown-sofa-2.jpeg", "../images/brown-sofa-3.jpeg"],
+            "category": "sofa",
             "qty": 1
         }, {
             "id": "3",
             "title": "صندلی عسلی",
             "price": 420000,
-            "imageUrl": "./images/chair-brown1.jpeg",
+            "imageList": ["../images/chair-brown1.jpeg", "../images/chair-brown2.jpeg", "../images/chair-brown3.jpeg"],
+            "category": "chair",
             "qty": 1
         }, {
             "id": "4",
             "title": "صندلی آرچر",
             "price": 370000,
-            "imageUrl": "./images/armchair1.jpeg",
+            "imageList": ["../images/armchair1.jpeg", "../images/armchair2.jpeg", "../images/armchair3.jpeg"],
+            "category": "chair",
             "qty": 1
         }, {
             "id": "5",
             "title": "لامپ تزئینی",
             "price": 70000,
-            "imageUrl": "./images/lamp1.jpeg",
+            "imageList": ["../images/lamp1.jpeg", "../images/lamp2.jpeg"],
+            "category": "light",
             "qty": 1
         }, {
             "id": "6",
             "title": "میز سفید",
             "price": 500000,
-            "imageUrl": "./images/white-desk1.jpeg",
+            "imageList": ["../images/white-desk1.jpeg", "../images/white-desk2.jpeg", "../images/white-desk3.jpeg"],
+            "category": "desk",
             "qty": 1
         }, {
             "id": "7",
             "title": "مبل گلوریا",
             "price": 600000,
-            "imageUrl": "./images/gray-sofa-1.jpeg",
+            "imageList": ["../images/gray-sofa-1.jpeg", "../images/gray-sofa-2.jpeg"],
+            "category": "sofa",
             "qty": 1
         }, {
             "id": "8",
             "title": "لوستر",
             "price": 190000,
-            "imageUrl": "./images/lamp5.jpeg",
+            "imageList": ["../images/lamp5.jpeg", "../images/lamp6.jpeg"],
+            "category": "light",
             "qty": 1
         }, {
             "id": "9",
             "title": "صندلی کوییک",
             "price": 265000,
-            "imageUrl": "./images/rock-chair1.jpeg",
+            "imageList": ["../images/rock-chair1.jpeg", "../images/rock-chair2.jpeg", "../images/rock-chair3.jpeg"],
+            "category": "chair",
             "qty": 1
         }, {
             "id": "10",
             "title": "میز دو طبقه",
             "price": 50000,
-            "imageUrl": "./images/table7.jpeg",
+            "imageList": ["../images/table7.jpeg", "../images/table8.jpeg"],
+            "category": "desk",
             "qty": 1
         }, {
             "id": "11",
             "title": "مبل آنکل",
             "price": 1500000,
-            "imageUrl": "./images/onkel-sofa1.jpeg",
+            "imageList": ["../images/onkel-sofa1.jpeg", "../images/onkel-sofa2.jpeg", "../images/onkel-sofa3.jpeg"],
+            "category": "sofa",
             "qty": 1
         }, {
             "id": "12",
             "title": "لامپ قارچی",
             "price": 85000,
-            "imageUrl": "./images/lamp3.jpeg",
+            "imageList": ["../images/lamp3.jpeg", "../images/lamp4.jpeg"],
+            "category": "light",
             "qty": 1
         }, {
             "id": "13",
             "title": "میز کایرو",
             "price": 490000,
-            "imageUrl": "./images/table4.jpeg",
+            "imageList": ["../images/table4.jpeg", "../images/table5.jpeg", "../images/table6.jpeg"],
+            "category": "desk",
             "qty": 1
         }, {
             "id": "14",
             "title": "میز شافل",
             "price": 300000,
-            "imageUrl": "./images/table1.jpeg",
+            "imageList": ["../images/table1.jpeg", "../images/table2.jpeg", "../images/table3.jpeg"],
+            "category": "desk",
             "qty": 1
 
         }, {
             "id": "15",
             "title": "چراغ مطالعه",
             "price": 320000,
-            "imageUrl": "./images/light.png",
+            "imageList": ["../images/light.png", "../images/light2.png", "../images/light3.png"],
+            "category": "light",
             "qty": 1
         }
 

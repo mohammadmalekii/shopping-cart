@@ -22,6 +22,7 @@ const cartSlice = createSlice({
         incremenetQty: (state, { payload }) => {
             const array = [...state.list]
             const item = array.find(product => product.id === payload)
+            console.log(array);
             item.qty = item.qty + 1
             state.list = array
         },
