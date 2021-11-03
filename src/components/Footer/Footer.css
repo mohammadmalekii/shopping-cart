@@ -3,6 +3,10 @@ footer {
     color: #fff;
     width: 100%;
     padding: 25px 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-container {
@@ -11,6 +15,7 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     margin: 0 50px;
+    width: 100%;
 }
 
 .social {
@@ -47,11 +52,14 @@ footer {
 }
 
 @media screen and (max-width:400px) {
-    footer {
-        width: 120vw;
-    }
     .footer-text p {
         text-align: center;
         line-height: 40px;
+    }
+}
+
+@media screen and (max-width:270px) {
+    .social {
+        flex-direction: column;
     }
 }

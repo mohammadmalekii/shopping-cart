@@ -2,6 +2,9 @@ nav {
     background-color: #fff;
     height: 100%;
     padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-menu {
@@ -12,9 +15,10 @@ nav {
 
 .nav-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    width: 100%;
+    /* flex-wrap: wrap; */
 }
 
 .nav-item a {
@@ -40,12 +44,15 @@ nav {
 .navbar-title {
     font-size: 30px;
     color: #000;
-    margin-left: 5px;
 }
 
 .nav-title {
     text-align: center;
-    margin-left: 100px;
+}
+
+.cart-wrapper {
+    width: 28%;
+    text-align: left;
 }
 
 .basket {
@@ -91,19 +98,12 @@ nav {
     .navbar-toggler {
         display: block;
     }
-    .nav-title {
-        margin-right: 100px;
+    .cart-wrapper {
+        width: auto;
     }
 }
 
 @media screen and (max-width:600px) {
-    .nav-title {
-        margin-right: 100px;
-        margin: 0;
-    }
-    .navbar-title {
-        font-size: 20px;
-    }
     .basket i {
         font-size: 22px;
         padding: 2px 0;
@@ -111,31 +111,23 @@ nav {
 }
 
 @media screen and (max-width:400px) {
-    .nav-title {
-        text-align: center;
-        margin: 0;
-    }
     .basket i {
         font-size: 15px;
         padding: 2px 0;
     }
+    .navbar-title {
+        font-size: 25px;
+    }
 }
 
-@media screen and (max-width:200px) {
+@media screen and (max-width:300px) {
     .nav-container {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
         flex-direction: column;
-        justify-content: space-between;
         margin: 15px;
-    }
-    .nav-container {
-        border-radius: 5px;
     }
     .nav-title {
-        margin: 15px;
         margin: 30px;
+        width: 100%;
     }
 }
 
