@@ -10,6 +10,7 @@ import "./productList.css";
 const ProductList = () => {
   const data = useSelector((state) => state.product.productList);
   const status = useSelector((state) => state.product.status);
+  const filter = useSelector((state) => state.filter.filter);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -20,9 +21,11 @@ const ProductList = () => {
 
   let content;
   if (status === "success") {
-    content = data.map((productItem) => (
-      <Product product={productItem} key={productItem.id} />
-    ));
+    content = data.map((productItem) =>
+      filter === "all" || filter === productItem.category ? (
+        <Product product={productItem} key={productItem.id} />
+      ) : null
+    );
   } else if (status === "loading") {
     content = (
       <Loader

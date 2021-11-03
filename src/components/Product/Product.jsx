@@ -41,7 +41,6 @@ const Product = ({ product }) => {
       <div className='img-container'>
         <Link to={`/product/${product.id}`}>
           <img
-            loading='lazy'
             src={product.imageList[0]}
             className='product-img'
             alt={product.title}
