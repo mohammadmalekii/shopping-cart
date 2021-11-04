@@ -1,17 +1,31 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 
 const Navbar = () => {
   const numberOfProduct = useSelector((state) => state.cart.list.length);
+  const [toggle, setToggle] = useState(false);
   return (
     <nav>
       <div className='nav-container'>
-        <button className='navbar-toggler' type='button'>
+        <button
+          className='navbar-toggler'
+          type='button'
+          onClick={() => setToggle(!toggle)}
+        >
           <i className='fas fa-2x fa-bars'></i>
         </button>
 
-        <div className='nav-list'>
+        <div className={`nav-list ${toggle ? "nav-bar" : "nav-bar-close"}`}>
+          <button
+            className='navbar-toggler'
+            type='button'
+            onClick={() => setToggle(!toggle)}
+          >
+            <i className='fas fa-2x fa-bars'></i>
+          </button>
+
           <ul className='nav-menu'>
             <li className='nav-item'>
               <NavLink

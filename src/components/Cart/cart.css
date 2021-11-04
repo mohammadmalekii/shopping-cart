@@ -296,4 +296,29 @@ th {
         font-size: 12px;
         padding: 10px;
     }
+    .price-line {
+        display: none;
+    }
+    .price-top {
+        font-size: 23px;
+        line-height: 50px;
+    }
+    .price-top p span {
+        display: block;
+    }
+}
+
+@media screen and (max-width:200px) {
+    .clear-cart button {
+        font-size: 7px;
+    }
+    .checkout {
+        font-size: 11px;
+        width: 75px;
+        height: 40px;
+    }
+    .price-top p {
+        font-size: 15px;
+        line-height: 50px;
+    }
 }

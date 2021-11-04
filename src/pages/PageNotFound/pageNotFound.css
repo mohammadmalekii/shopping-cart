@@ -1,0 +1,30 @@
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.not-found h1 {
+    font-size: 25px;
+}
+
+.not-found img {
+    margin: 25px 0;
+    width: 50%;
+}
+
+.not-found a {
+    background-color: #fff;
+    padding: 20px;
+    border: 2px #222 solid;
+    color: #333;
+    font-size: 20px;
+    transition: .5s all;
+}
+
+.not-found a:hover {
+    background-color: #222;
+    color: #fff;
+}

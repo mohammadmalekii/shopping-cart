@@ -5,6 +5,7 @@ import ProductPage from "./pages/ProductPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import PageNotFound from "./pages/PageNotFound";
 
 const App = () => {
   return (
@@ -22,6 +23,9 @@ const App = () => {
         </Route>
         <Route path='/' exact>
           <ShopPage />
+        </Route>
+        <Route>
+          <PageNotFound />
         </Route>
       </Switch>
       <Footer />
