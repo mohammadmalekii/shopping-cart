@@ -15,7 +15,7 @@
             "qty": 1
         }, {
             "id": "3",
-            "title": "صندلی عسلی",
+            "title": "میز عسلی",
             "price": 420000,
             "imageList": ["../images/chair-brown1.jpeg", "../images/chair-brown2.jpeg", "../images/chair-brown3.jpeg"],
             "category": "chair",
