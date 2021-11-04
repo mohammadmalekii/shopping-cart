@@ -1,5 +1,5 @@
-import Filter from "../components/Filter";
-import ProductList from "../components/ProductList";
+import Filter from "../../components/Filter";
+import ProductList from "../../components/RenderProduct/ProductList";
 const ShopPage = () => {
   return (
     <>

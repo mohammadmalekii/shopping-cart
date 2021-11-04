@@ -1,10 +1,5 @@
-import { formatCurrency } from "../formatCurrency";
-import {
-  addToCart,
-  calcTotalPrice,
-  decremenetQty,
-  incremenetQty,
-} from "../../Redux/cartSlice";
+import { formatCurrency } from "../../formatCurrency";
+import { addToCart, calcTotalPrice } from "../../../Redux/cartSlice";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";

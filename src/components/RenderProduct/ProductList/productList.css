@@ -70,14 +70,16 @@
     color: white;
     font-weight: bold;
     margin: 20px 0 15px 0;
-    border-radius: 8px;
+    border-radius: 3px;
     cursor: pointer;
+    border: #05c79a 3px solid;
     transition: all .2s;
 }
 
 .add-to-cart:hover {
-    border-radius: 10px;
-    background: #05c79a;
+    background: transparent;
+    color: #222;
+    border: #05c79a 3px solid;
 }
 
 @media screen and (max-width:600px) {

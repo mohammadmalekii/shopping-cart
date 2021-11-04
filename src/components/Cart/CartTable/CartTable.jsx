@@ -9,7 +9,7 @@ const BasketTable = () => {
   const dispatch = useDispatch();
   const removeAllProduct = () => {
     dispatch(clearCart());
-    toast.error("همه محصولات از سبد خرید حذف شد", {
+    toast.error("محصولات از سبد خرید حذف شدند", {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,

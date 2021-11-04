@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchProduct } from "../../Redux/productSlice";
+import { fetchProduct } from "../../../Redux/productSlice";
 import Product from "../Product";
-import Error from "../Error";
+import Error from "../../Error";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "./productList.css";

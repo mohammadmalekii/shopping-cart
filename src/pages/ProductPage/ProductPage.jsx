@@ -1,14 +1,16 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
+import {
+  fetchSelectProduct,
+  removeSelectProduct,
+} from "../../Redux/productSlice";
+import ProductSellInfo from "../../components/ProductDetail/ProductSellInfo";
+import ProductImage from "../../components/ProductDetail/ProductImage";
+import ProductInfo from "../../components/ProductDetail/ProductInfo";
 import Loader from "react-loader-spinner";
-import ProductSellInfo from "../components/ProductDetail/ProductSellInfo";
-import ProductImage from "../components/ProductDetail/ProductImage";
-import ProductInfo from "../components/ProductDetail/ProductInfo";
-import { fetchSelectProduct, removeSelectProduct } from "../Redux/productSlice";
-
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import "../components/ProductDetail/productDetail.css";
+import "./productPage.css";
 
 const ProductPage = () => {
   const { productId } = useParams();

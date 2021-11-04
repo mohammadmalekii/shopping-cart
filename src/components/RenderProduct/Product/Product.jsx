@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, calcTotalPrice } from "../../Redux/cartSlice";
+import { addToCart, calcTotalPrice } from "../../../Redux/cartSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
-import { formatCurrency } from "../formatCurrency";
+import { formatCurrency } from "../../formatCurrency";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {

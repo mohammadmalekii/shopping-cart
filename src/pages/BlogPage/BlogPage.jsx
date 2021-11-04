@@ -1,5 +1,5 @@
-import Post from "../components/Blog/Post";
-import "../components/Blog/blog.css";
+import Post from "../../components/Post";
+import "./blog.css";
 const BlogPage = () => {
   return (
     <section id='Blog'>
