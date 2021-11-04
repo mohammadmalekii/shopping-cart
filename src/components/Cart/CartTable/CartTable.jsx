@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../../../Redux/cartSlice";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import CartItem from "../CartItem/CartItem";
 import emptyCartSvg from "./empty-cart.svg";
 
@@ -9,6 +9,15 @@ const BasketTable = () => {
   const dispatch = useDispatch();
   const removeAllProduct = () => {
     dispatch(clearCart());
+    toast.error("همه محصولات از سبد خرید حذف شد", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (

@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 const ProductImage = ({ imageList }) => {
   const [imgSrc, setImgSrc] = useState(null);
   const imageSlider = (src) => {
