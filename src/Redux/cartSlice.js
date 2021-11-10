@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 const initialState = {
     list: [],
     totalPrice: 0,
@@ -19,20 +18,16 @@ const cartSlice = createSlice({
             state.list = []
             state.totalPrice = 0
         },
-        incremenetQty: (state, { payload }) => {
+        increaseOrDecreaseQty: (state, { payload: { id, qtyType } }) => {
             const array = [...state.list]
-            const item = array.find(product => product.id === payload)
-            console.log(array);
-            item.qty = item.qty + 1
+            const item = array.find(product => product.id === id)
+            if (qtyType === 'increase') {
+                item.qty = item.qty + 1
+            } else if (qtyType === 'decrease') {
+                item.qty = item.qty - 1
+            }
             state.list = array
         },
-        decremenetQty: (state, { payload }) => {
-            const array = [...state.list]
-            const item = array.find(product => product.id === payload)
-            item.qty = item.qty - 1
-            state.list = array
-        },
-
         calcTotalPrice: (state) => {
             const array = [...state.list]
             const price = array.reduce((acc, curr) => {
@@ -40,12 +35,11 @@ const cartSlice = createSlice({
             }, 0)
             state.totalPrice = price
         },
-
-
-
-
     }
 
 })
-export const { addToCart, removeFromCart, clearCart, incremenetQty, decremenetQty, calcTotalPrice } = cartSlice.actions
+
+export const getTotalPrice = ((state) => state.cart.totalPrice);
+export const getCartList = ((state) => state.cart.list);
+export const { addToCart, removeFromCart, clearCart, increaseOrDecreaseQty, calcTotalPrice } = cartSlice.actions
 export default cartSlice.reducer

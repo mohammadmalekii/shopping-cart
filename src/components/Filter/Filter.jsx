@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeFilter } from "../../Redux/filterSlice";
+import { changeFilter, getFilterStatus } from "../../Redux/filterSlice";
 import "./filter.css";
 const Filter = () => {
-  const filterStatus = useSelector((state) => state.filter.filter);
+  const filterStatus = useSelector(getFilterStatus);
 
   const dispatch = useDispatch();
 

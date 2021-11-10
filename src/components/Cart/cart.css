@@ -137,6 +137,8 @@ th {
 .empty-cart {
     text-align: center;
     font-size: 25px;
+    width: 75%;
+    margin: 0 auto;
 }
 
 .empty-cart h1 {

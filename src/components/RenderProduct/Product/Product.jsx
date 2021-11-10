@@ -1,5 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, calcTotalPrice } from "../../../Redux/cartSlice";
+import {
+  addToCart,
+  calcTotalPrice,
+  getCartList,
+} from "../../../Redux/cartSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
@@ -8,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
-  const cartList = useSelector((state) => state.cart.list);
+  const cartList = useSelector(getCartList);
 
   const addToBasket = () => {
     dispatch(addToCart(product));

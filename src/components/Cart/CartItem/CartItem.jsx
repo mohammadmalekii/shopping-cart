@@ -5,8 +5,7 @@ import { toast } from "react-toastify";
 
 import {
   removeFromCart,
-  incremenetQty,
-  decremenetQty,
+  increaseOrDecreaseQty,
   calcTotalPrice,
 } from "../../../Redux/cartSlice";
 import { formatCurrency } from "../../formatCurrency";
@@ -17,13 +16,13 @@ const CartItem = ({ cart }) => {
 
   const setIncrease = () => {
     setQty((qty) => qty + 1);
-    dispatch(incremenetQty(cart.id));
+    dispatch(increaseOrDecreaseQty({ id: cart.id, qtyType: "increase" }));
     dispatch(calcTotalPrice());
   };
 
   const setDecrease = () => {
     setQty((qty) => qty - 1);
-    dispatch(decremenetQty(cart.id));
+    dispatch(increaseOrDecreaseQty({ id: cart.id, qtyType: "decrease" }));
     dispatch(calcTotalPrice());
   };
 

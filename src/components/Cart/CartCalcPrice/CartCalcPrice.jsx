@@ -4,14 +4,14 @@ import basket from "./basket.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
-import { clearCart } from "../../../Redux/cartSlice";
+import { clearCart, getTotalPrice } from "../../../Redux/cartSlice";
 const BasketCalc = () => {
-  const totalPrice = useSelector((state) => state.cart.totalPrice);
+  const totalPrice = useSelector(getTotalPrice);
   const dispatch = useDispatch();
 
   const handleCheckout = () => {
     dispatch(clearCart());
-    toast.success("پرداخت انجام شد", {
+    toast.success("پرداخت با موفقیت انجام شد", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -32,7 +32,11 @@ const BasketCalc = () => {
           </p>
         </div>
         <div className='price-body'>
-          <button className='checkout' onClick={handleCheckout}>
+          <button
+            className='checkout'
+            onClick={handleCheckout}
+            disabled={totalPrice === 0}
+          >
             تسویه حساب
           </button>
         </div>

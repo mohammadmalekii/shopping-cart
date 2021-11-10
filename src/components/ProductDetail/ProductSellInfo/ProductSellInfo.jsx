@@ -1,5 +1,9 @@
 import { formatCurrency } from "../../formatCurrency";
-import { addToCart, calcTotalPrice } from "../../../Redux/cartSlice";
+import {
+  addToCart,
+  calcTotalPrice,
+  getCartList,
+} from "../../../Redux/cartSlice";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -8,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 const ProductSellInfo = ({ product }) => {
   const dispatch = useDispatch();
   const [isInCard, setIsInCard] = useState(false);
-  const cartList = useSelector((state) => state.cart.list);
+  const cartList = useSelector(getCartList);
 
   const addToBasket = () => {
     dispatch(addToCart(product));

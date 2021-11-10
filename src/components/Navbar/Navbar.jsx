@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { getCartList } from "../../Redux/cartSlice";
 import "./navbar.css";
 
 const Navbar = () => {
-  const numberOfProduct = useSelector((state) => state.cart.list.length);
+  const numberOfProduct = useSelector(getCartList).length;
   const [toggle, setToggle] = useState(false);
   return (
     <nav>

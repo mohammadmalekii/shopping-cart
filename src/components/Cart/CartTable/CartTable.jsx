@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart } from "../../../Redux/cartSlice";
+import { clearCart, getCartList } from "../../../Redux/cartSlice";
 import { toast, ToastContainer } from "react-toastify";
 import CartItem from "../CartItem/CartItem";
 import emptyCartSvg from "./empty-cart.svg";
 
 const BasketTable = () => {
-  const cart = useSelector((state) => state.cart.list);
+  const cart = useSelector(getCartList);
   const dispatch = useDispatch();
   const removeAllProduct = () => {
     dispatch(clearCart());

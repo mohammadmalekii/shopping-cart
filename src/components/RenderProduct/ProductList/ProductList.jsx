@@ -1,16 +1,21 @@
 import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchProduct } from "../../../Redux/productSlice";
+import {
+  fetchProduct,
+  getAllProduct,
+  getProductStatus,
+} from "../../../Redux/productSlice";
 import Product from "../Product";
 import Error from "../../Error";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "./productList.css";
+import { getFilterStatus } from "../../../Redux/filterSlice";
 const ProductList = () => {
-  const data = useSelector((state) => state.product.productList);
-  const status = useSelector((state) => state.product.status);
-  const filter = useSelector((state) => state.filter.filter);
+  const data = useSelector(getAllProduct);
+  const status = useSelector(getProductStatus);
+  const filter = useSelector(getFilterStatus);
 
   const dispatch = useDispatch();
   useEffect(() => {

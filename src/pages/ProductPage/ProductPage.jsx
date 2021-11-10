@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import {
   fetchSelectProduct,
+  getSelectedProduct,
   removeSelectProduct,
 } from "../../Redux/productSlice";
 import ProductSellInfo from "../../components/ProductDetail/ProductSellInfo";
@@ -15,7 +16,7 @@ import "./productPage.css";
 const ProductPage = () => {
   const { productId } = useParams();
   const dispatch = useDispatch();
-  const product = useSelector((state) => state.product.selectProduct);
+  const product = useSelector(getSelectedProduct);
 
   useEffect(() => {
     window.scrollTo(0, 0);
