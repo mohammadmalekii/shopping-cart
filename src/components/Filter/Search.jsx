@@ -12,9 +12,8 @@ const Search = () => {
 
   const [, setSearchText] = useState("");
   const handleSearch = (e) => {
-    const text = e.target.value.trim();
-    setSearchText(text);
-    dispatch(updateSearch(text));
+    setSearchText(e.target.value);
+    dispatch(updateSearch(e.target.value));
   };
 
   useEffect(() => {
@@ -30,11 +29,10 @@ const Search = () => {
       <input
         className='search'
         type='text'
-        placeholder='جستجو...'
+        placeholder='جستجو ...'
         value={search}
         onChange={handleSearch}
       />
-      {/* <i class='fas fa-search'></i> */}
     </div>
   );
 };
