@@ -195,6 +195,15 @@
     .add-to-cart-btn {
         font-size: 17px;
     }
+    .description-title h1 {
+        text-align: center;
+    }
+    .description-title h1 {
+        text-align: center;
+    }
+    .description {
+        padding: 45px 45px 90px;
+    }
 }
 
 @media screen and (max-width:350px) {

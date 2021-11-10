@@ -41,7 +41,7 @@ const productSlice = createSlice({
         },
         [fetchProduct.rejected]: (state) => {
             state.status = "error";
-            state.error = "API have some problem!";
+            console.log('api got some error')
         },
         [fetchSelectProduct.pending]: (state) => {
             state.selectProductStatus = "loading";

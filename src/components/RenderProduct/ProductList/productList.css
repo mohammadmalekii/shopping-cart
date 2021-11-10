@@ -82,16 +82,7 @@
     border: #05c79a 3px solid;
 }
 
-@media screen and (max-width:600px) {
-    .product-list {
-        margin: 5px;
-    }
-}
-
 @media screen and (max-width:275px) {
-    .product-list {
-        margin: 5px;
-    }
     .product-list {
         grid-template-columns: auto;
     }

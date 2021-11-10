@@ -244,6 +244,9 @@ th {
     .input-number {
         width: 10px;
     }
+    td {
+        line-height: 30px;
+    }
 }
 
 @media screen and (max-width:750px) {

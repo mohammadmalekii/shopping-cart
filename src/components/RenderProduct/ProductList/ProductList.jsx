@@ -7,7 +7,6 @@ import {
   getProductStatus,
 } from "../../../Redux/productSlice";
 import Product from "../Product";
-import Error from "../../Error";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "./productList.css";
@@ -41,8 +40,6 @@ const ProductList = () => {
         width={150}
       />
     );
-  } else if (status === "error") {
-    content = <Error />;
   }
   return (
     <section className='products'>
