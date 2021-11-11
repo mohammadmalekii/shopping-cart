@@ -27,6 +27,7 @@
         "json-server": "cd src/common && json-server --watch db.json --port 5000",
         "dev": "concurrently \"npm start\" \"npm run json-server\""
     },
+    "proxy": "http://localhost:5000",
     "eslintConfig": {
         "extends": [
             "react-app",
